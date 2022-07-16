@@ -108,17 +108,21 @@ function letterUpdate(e) {
             button.removeEventListener('click', letterUpdate)
         });
         hintText.style.opacity = "0";
+
         return document.querySelector('.game-status').textContent = "Game Over!!!"
+    
     }
 
     document.querySelector('small').textContent = newValue;
 
     span.forEach(function (spanText) {
+       
         if (spanText.textContent == e.target.textContent) {
             spanText.style.color = "white";
             score++;
             e.target.style.display = "none";
         }
+   
     });
 
     if (score == newQuestion.length) {
@@ -129,4 +133,52 @@ function letterUpdate(e) {
             button.removeEventListener('click', letterUpdate)
         });
     }
+
+}
+
+// Restart Game function
+
+const restartGame = document.querySelector('.restart');
+
+let score1 = 0;
+
+let count = 0;
+
+if(count == 0){ 
+
+    restartGame.addEventListener('click', gameRestart);
+
+}
+
+
+function gameRestart(e) {
+     count++;
+
+     console.log(count)
+  
+     if(count   > 0 ){
+        restartGame.removeEventListener('click', gameRestart);
+     }
+
+    let restart_newValue = 10;
+
+    const question1 = ['Lagos', 'Manchester United', "LeBron", "Real Madrid", "Wizkid"];
+
+    // remove previous event listener
+    let usableBtn = newBtn.map(function (button) {
+        button.removeEventListener('click', letterUpdate)
+    });
+
+    document.querySelector('.game-status').innerHTML = gameStatus;
+
+    document.querySelector('.result').textContent = "";
+
+    let randomQuestionValue1 = Math.floor(Math.random() * question.length);
+
+    let newArray1 = Array.from(question1[randomQuestionValue1]);
+
+    let restartQuestion = newArray1.map(function (item) {
+        return `<span>${item}</span>`
+    });
+
 }
