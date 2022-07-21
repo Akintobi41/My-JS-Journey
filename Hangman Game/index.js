@@ -180,5 +180,49 @@ function gameRestart(e) {
     let restartQuestion = newArray1.map(function (item) {
         return `<span>${item}</span>`
     });
+    let hintBtn = document.querySelector('.hint-button');
+
+    hintBtn.addEventListener('click', restart_quizHints);
+
+    let restartHint = document.querySelector('.hints');
+
+    restartHint.style.opacity = "0";
+
+    function restart_quizHints() {
+        restartHint.style.opacity = "1";
+
+        if (newArray1.join("").toLowerCase() == "lagos") {
+            restartHint.textContent = "Most populous city in Nigeria ?";
+        }
+        else if (newArray1.join("").toLowerCase() == "lebron") {
+            restartHint.textContent = "Drafted in 2003 by Cleveland Cavaliers";
+        }
+        else if (newArray1.join("").toLowerCase() == "real madrid") {
+            restartHint.textContent = "The most successful champions league club";
+        }
+        else if (newArray1.join("").toLowerCase() == "manchester united") {
+            restartHint.textContent = "The pride of England";
+        }
+        else if (newArray1.join("").toLowerCase() == "wizkid") {
+            restartHint.textContent = "Famous Song - Pakurumo!";
+        }
+
+    }
+
+    if (newArray1.join("").toLowerCase() == "lagos") {
+        category.textContent = "The chosen category is Cities";
+    }
+    else if (newArray1.join("").toLowerCase() == "lebron") {
+        category.textContent = "The chosen category is Famous Basketball Player";
+    }
+    else if (newArray1.join("").toLowerCase() == "real madrid") {
+        category.textContent = "The chosen category is Football Club";
+    }
+    else if (newArray1.join("").toLowerCase() == "manchester united") {
+        category.textContent = "The chosen category is Football Club";
+    }
+    else if (newArray1.join("").toLowerCase() == "wizkid") {
+        category.textContent = "The chosen category is Nigerian Musician";
+    }
 
 }
