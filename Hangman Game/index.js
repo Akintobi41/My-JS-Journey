@@ -145,9 +145,7 @@ let score1 = 0;
 let count = 0;
 
 if(count == 0){ 
-
     restartGame.addEventListener('click', gameRestart);
-
 }
 
 
@@ -224,5 +222,84 @@ function gameRestart(e) {
     else if (newArray1.join("").toLowerCase() == "wizkid") {
         category.textContent = "The chosen category is Nigerian Musician";
     }
+    document.querySelector('.question').innerHTML = restartQuestion.join("").toLowerCase();
 
+    let newBtn1 = Array.from(buttons)
+
+    let usableBtn1 = newBtn1.map(function (button) {
+
+        button.style.display = "block";
+        button.addEventListener('click', letterUpdate1);
+
+    });
+
+    let span1 = document.querySelectorAll('span');
+
+    let spanArray1 = Array.from(span1);
+
+    span1.forEach(function (item) {
+        item.style.color = "transparent";
+
+        if (item.textContent == " ") {
+            item.innerHTML = "-";
+            item.style.color = "white"
+            score1++;
+        }
+
+    });
+
+    function letterUpdate1(e) {
+
+        let newEl1 = spanArray1.map(function (item) {
+
+            return item.textContent;
+
+        });
+
+        let arrayValue1 = newEl1.join("");
+
+        if (!arrayValue1.includes(e.target.textContent)) {
+
+            --restart_newValue;
+
+            e.target.style.display = "none";
+        
+        }
+
+        if (restart_newValue == 0) {
+
+            let usableBtn1 = newBtn1.map(function (button) {
+                button.removeEventListener('click', letterUpdate1)
+            });
+                score1 = 0;
+                restartHint.style.opacity = "0";
+                restartGame.addEventListener('click', gameRestart);
+            return document.querySelector('.game-status').textContent = "Game Over!!!"
+        }
+
+        span1.forEach(function (item) {
+
+            if (item.textContent == e.target.textContent) {
+                item.style.color = "white";
+                score1++;
+                e.target.style.display = "none";
+
+            }
+
+        });
+
+        if (score1 == restartQuestion.length) {
+                let usableBtn1 = newBtn1.map(function (button) {
+                button.removeEventListener('click', letterUpdate1);
+            });
+
+            score1 = 0;
+            restartHint.style.opacity = "0";
+            document.querySelector('.result').textContent = "You win!";
+            restartGame.addEventListener('click', gameRestart);
+        }
+        console.log(score1,"score1");
+        document.querySelector('small').textContent = restart_newValue;
+    }
 }
+
