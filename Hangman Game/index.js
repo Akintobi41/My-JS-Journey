@@ -110,19 +110,19 @@ function letterUpdate(e) {
         hintText.style.opacity = "0";
 
         return document.querySelector('.game-status').textContent = "Game Over!!!"
-    
+
     }
 
     document.querySelector('small').textContent = newValue;
 
     span.forEach(function (spanText) {
-       
+
         if (spanText.textContent == e.target.textContent) {
             spanText.style.color = "white";
             score++;
             e.target.style.display = "none";
         }
-   
+
     });
 
     if (score == newQuestion.length) {
@@ -144,25 +144,26 @@ let score1 = 0;
 
 let count = 0;
 
-if(count == 0){ 
+if (count == 0) {
     restartGame.addEventListener('click', gameRestart);
 }
 
 
 function gameRestart(e) {
-     count++;
+    count++;
 
-     console.log(count)
-  
-     if(count   > 0 ){
+    console.log(count)
+
+    if (count > 0) {
         restartGame.removeEventListener('click', gameRestart);
-     }
+    }
 
     let restart_newValue = 10;
 
     const question1 = ['Lagos', 'Manchester United', "LeBron", "Real Madrid", "Wizkid"];
 
     // remove previous event listener
+
     let usableBtn = newBtn.map(function (button) {
         button.removeEventListener('click', letterUpdate)
     });
@@ -263,7 +264,7 @@ function gameRestart(e) {
             --restart_newValue;
 
             e.target.style.display = "none";
-        
+
         }
 
         if (restart_newValue == 0) {
@@ -271,9 +272,9 @@ function gameRestart(e) {
             let usableBtn1 = newBtn1.map(function (button) {
                 button.removeEventListener('click', letterUpdate1)
             });
-                score1 = 0;
-                restartHint.style.opacity = "0";
-                restartGame.addEventListener('click', gameRestart);
+            score1 = 0;
+            restartHint.style.opacity = "0";
+            restartGame.addEventListener('click', gameRestart);
             return document.querySelector('.game-status').textContent = "Game Over!!!"
         }
 
@@ -289,7 +290,7 @@ function gameRestart(e) {
         });
 
         if (score1 == restartQuestion.length) {
-                let usableBtn1 = newBtn1.map(function (button) {
+            let usableBtn1 = newBtn1.map(function (button) {
                 button.removeEventListener('click', letterUpdate1);
             });
 
@@ -298,7 +299,6 @@ function gameRestart(e) {
             document.querySelector('.result').textContent = "You win!";
             restartGame.addEventListener('click', gameRestart);
         }
-        console.log(score1,"score1");
         document.querySelector('small').textContent = restart_newValue;
     }
 }
