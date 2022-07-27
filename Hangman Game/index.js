@@ -1,21 +1,22 @@
-let buttons = document.querySelectorAll('main button');
-
 const question = ['Lagos', 'Manchester United', "LeBron", "Real Madrid", "Wizkid"];
 
-let score = 0;
+let buttons = document.querySelectorAll('main button'),
 
-let randomQuestionValue = Math.floor(Math.random() * question.length)
+    score = 0,
 
-let newArray = Array.from(question[randomQuestionValue])
+    randomQuestionValue = Math.floor(Math.random() * question.length),
 
-let category = document.querySelector('.category');
+    newArray = Array.from(question[randomQuestionValue]),
 
-let gameStatus = document.querySelector('.game-status').innerHTML;
+    category = document.querySelector('.category'),
 
-let newBtn = Array.from(buttons);
-let newValue = 10;
+    gameStatus = document.querySelector('.game-status').innerHTML,
 
-let hint = document.querySelector('.hint-button');
+    newBtn = Array.from(buttons),
+
+    newValue = 10,
+
+    hint = document.querySelector('.hint-button');
 hint.addEventListener('click', quizHints);
 
 let hintText = document.querySelector('.hints')
@@ -25,6 +26,7 @@ hintText.style.opacity = "0";
 let newQuestion = newArray.map(function (item) {
     return `<span>${item}</span>`
 });
+
 quizType();
 
 function quizType() {
@@ -66,11 +68,13 @@ function quizHints() {
 }
 
 
-document.querySelector('.question').innerHTML = newQuestion.join("").toLowerCase();
+let questionBox = document.querySelector('.question');
 
-let span = document.querySelectorAll('span');
+questionBox.innerHTML = newQuestion.join("").toLowerCase();
 
-let spanArray = Array.from(span)
+let span = document.querySelectorAll('span'),
+
+    spanArray = Array.from(span)
 
 span.forEach(function (item) {
     item.style.color = "transparent";
@@ -91,13 +95,12 @@ let usableBtn = newBtn.map(function (button) {
 
 function letterUpdate(e) {
 
-
     let newEl = spanArray.map(function (item) {
-
         return item.textContent
     })
 
     let arrayValue = newEl.join("");
+
     if (!arrayValue.includes(e.target.textContent)) {
         --newValue;
         e.target.style.display = "none";
@@ -110,7 +113,6 @@ function letterUpdate(e) {
         hintText.style.opacity = "0";
 
         return document.querySelector('.game-status').textContent = "Game Over!!!"
-
     }
 
     document.querySelector('small').textContent = newValue;
@@ -150,9 +152,8 @@ if (count == 0) {
 
 
 function gameRestart(e) {
-    count++;
 
-    console.log(count)
+    count++;
 
     if (count > 0) {
         restartGame.removeEventListener('click', gameRestart);
@@ -252,23 +253,17 @@ function gameRestart(e) {
     function letterUpdate1(e) {
 
         let newEl1 = spanArray1.map(function (item) {
-
             return item.textContent;
-
         });
 
         let arrayValue1 = newEl1.join("");
 
         if (!arrayValue1.includes(e.target.textContent)) {
-
             --restart_newValue;
-
             e.target.style.display = "none";
-
         }
 
         if (restart_newValue == 0) {
-
             let usableBtn1 = newBtn1.map(function (button) {
                 button.removeEventListener('click', letterUpdate1)
             });
@@ -284,9 +279,7 @@ function gameRestart(e) {
                 item.style.color = "white";
                 score1++;
                 e.target.style.display = "none";
-
             }
-
         });
 
         if (score1 == restartQuestion.length) {
