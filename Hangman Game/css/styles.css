@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
-  
 }
 body {
   background: linear-gradient(-45deg, #323232, #000);
@@ -62,8 +61,8 @@ span {
   width: 5rem;
   font-size: 2rem;
 }
-span::before{
-  content: '';
+span::before {
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -71,81 +70,77 @@ span::before{
   width: 100%;
   border-bottom: solid 1px white;
 }
-.category{
+.category {
   font-size: 1.5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
-.question{ 
-  margin-bottom:1.5rem;
+.question {
+  margin-bottom: 1.5rem;
   color: white;
   font-size: 2rem;
 }
-small{ 
+small {
   font-size: 2rem;
 }
-.game-status{ 
+.game-status {
   color: white;
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
-.result{ 
+.result {
   color: white;
   font-size: 2.2rem;
 }
-aside button { 
+aside button {
   width: 8rem;
   height: 2.5rem;
   font-size: 1.2rem;
 }
-small{ 
+small {
   color: purple;
 }
-.hints{ 
+.hints {
   margin-bottom: 1rem;
   font-size: 2rem;
   color: white;
-
-
 }
-span::selection{
-
+span::selection {
   color: transparent;
 }
-aside{ 
-   display: flex;
-   justify-content: center;
+aside {
+  display: flex;
+  justify-content: center;
 }
-.restart{ 
-   margin-left: 1rem;
-}
-
-@media screen and (max-width:550px) {
-      main{ 
-          width: 90%;
-          height:16rem;
-      }
-      .category{
-          width: 90%;
-          text-align: center;
-      }
-      .question{
-          width: 90%;
-          height: 5rem;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-      }
-      span { 
-          width: 1rem;
-          font-size: 1.2rem;
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
-      }
-      .hints{ 
-          font-size: 1.5rem;
-          text-align: center;
-          height: 4rem;
-      }
+.restart {
+  margin-left: 1rem;
 }
 
+@media screen and (max-width: 550px) {
+  main {
+    width: 90%;
+    height: 16rem;
+  }
+  .category {
+    width: 90%;
+    text-align: center;
+  }
+  .question {
+    width: 90%;
+    height: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  span {
+    width: 1rem;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .hints {
+    font-size: 1.5rem;
+    text-align: center;
+    height: 4rem;
+  }
+}

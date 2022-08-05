@@ -152,7 +152,6 @@ if (count == 0) {
 
 
 function gameRestart(e) {
-
     count++;
 
     if (count > 0) {
@@ -286,6 +285,7 @@ function gameRestart(e) {
             let usableBtn1 = newBtn1.map(function (button) {
                 button.removeEventListener('click', letterUpdate1);
             });
+
 
             score1 = 0;
             restartHint.style.opacity = "0";
