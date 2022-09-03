@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+}
+body {
+  position: relative;
+  max-width: 1500px;
+  margin: auto;
+  min-height: 100vh;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.menu-toggle {
+  display: none;
+}
+.logo {
+  margin-left: 0.5rem;
+  align-self: center;
+}
+.avatar {
+  width: 25px;
+  height: 25px;
+  margin: 0 0.5rem;
+}
+.menu-section {
+  align-self: center;
+  display: flex;
+}
+.menu-Toggle {
+  align-self: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.25rem;
+}
+.cart-section {
+  align-self: center;
+}
+.icon-menu {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+.icon-close {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.main-catalogue {
+  position: relative;
+}
+.product-1 {
+  height: 100%;
+  width: 100%;
+  object-position: 70% -50px;
+}
+.previous {
+  width: 2rem;
+  height: 2rem;
+  background-color: #fff;
+  position: absolute;
+  top: 38%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  left: 15px;
+}
+.next {
+  width: 2rem;
+  height: 2rem;
+  background-color: #fff;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  right: 15px;
+  top: 38%;
+}
+.prev-icon,
+.next-icon {
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: white;
+}
+
+.icon-menu.active {
+  display: none;
+}
+.icon-close.active {
+  display: block;
+}
