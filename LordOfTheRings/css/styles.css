@@ -160,7 +160,8 @@ header {
   font-size: 1.5rem;
   color: #100f0f;
   letter-spacing: 1px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  max-width: 450px;
 }
 .article-header {
   font-family: "Dancing Script", cursive;

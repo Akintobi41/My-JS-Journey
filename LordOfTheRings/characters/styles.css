@@ -1,0 +1,23 @@
+.book-link {
+  opacity: 0.4;
+}
+.find-character {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.find-character h3 {
+  color: #000;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  font-size: 0.7em;
+  font-weight: bolder;
+}
+
+.h1-title sub {
+  font-size: 0.8rem;
+}
